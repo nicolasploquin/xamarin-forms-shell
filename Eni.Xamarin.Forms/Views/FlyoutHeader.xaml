@@ -5,7 +5,7 @@
              HeightRequest="200">
     <Grid BackgroundColor="Navy">
         <Image Aspect="AspectFill"
-               Source="logo_eni_blanc.sv"
+               Source="logo_eni.svg"
                Opacity="1" 
                />
         <Label Text="Ma Banque"

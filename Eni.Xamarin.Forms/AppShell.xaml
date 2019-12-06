@@ -35,27 +35,41 @@
         <views:FlyoutHeader />
     </Shell.FlyoutHeader>
 
- 
-    <views:ClientFormPage />
-    <views:ClientsPage />
 
+    <FlyoutItem Title="Home" FlyoutIcon="icon.png" Icon="icon.png">
+        <Tab>
+            <views:MainPage x:Name="main" IconImageSource="icon.png" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Clients">
+        <Tab>
+            <views:ClientsPage x:Name="clients" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Nouveau">
+        <Tab>
+            <views:ClientFormPage x:Name="nouveau" IconImageSource="icon.png" />
+        </Tab>
+    </FlyoutItem>
 
-    <!--<FlyoutItem Route="clients"
-                Title="Clients"
-                FlyoutDisplayOptions="AsMultipleItems">
+    <!--<views:ClientsPage />-->
 
-        <ShellContent Route="list"
-                      Title="Clients"
-                      Icon="icon.png"
-                      ContentTemplate="{DataTemplate views:ClientsPage}" />
+        <!--<FlyoutItem Title="Clients">
+            <views:ClientsPage />
+        </FlyoutItem>-->
 
-        <ShellContent Route="create"
-                      Title="Créer"
-                      Icon="icon.png"
-                      ContentTemplate="{DataTemplate views:ClientFormPage}" />
-
+    <!--<FlyoutItem Title="Clients">
+        <Tab>
+            <ShellContent x:Name="ClientsContent"
+                          ContentTemplate="{DataTemplate views:ClientsPage}" />
+        </Tab>
     </FlyoutItem>-->
-    
 
+    <!--<FlyoutItem Title="Nouveau">
+        <Tab>
+            <ShellContent x:Name="ClientFormContent"
+                          ContentTemplate="{DataTemplate views:ClientFormPage}" />
+        </Tab>
+    </FlyoutItem>-->
 
 </Shell>

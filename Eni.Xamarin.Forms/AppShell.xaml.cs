@@ -9,7 +9,6 @@ using Xamarin.Forms.Xaml;
 
 namespace Eni.Xamarin.Forms
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AppShell : Shell
     {
         public AppShell()
