@@ -4,7 +4,7 @@
        xmlns:d="http://xamarin.com/schemas/2014/forms/design"
        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
        mc:Ignorable="d"
-       xmlns:local="clr-namespace:Eni.Xamarin.Forms.Views"
+       xmlns:views="clr-namespace:Eni.Xamarin.Forms.Views"
        Title="Ma Banque"
        x:Class="Eni.Xamarin.Forms.AppShell">
 
@@ -14,7 +14,7 @@
     -->
     <Shell.Resources>
         <ResourceDictionary>
-            <Color x:Key="NavigationPrimary">#2196F3</Color>
+            <Color x:Key="NavigationPrimary">#0066FF</Color>
             <Style x:Key="BaseStyle" TargetType="Element">
                 <Setter Property="Shell.BackgroundColor" Value="{StaticResource NavigationPrimary}" />
                 <Setter Property="Shell.ForegroundColor" Value="White" />
@@ -29,47 +29,33 @@
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
         </ResourceDictionary>
     </Shell.Resources>
-    <ShellContent>
-        <local:MainPage />
-    </ShellContent>
-    <!-- Your Pages
-    <TabBar>
-        <Tab Title="Home">
-            
-        </Tab>
-        <Tab Title="Clients">
-            <ShellContent ContentTemplate="{DataTemplate local:ClientsPage}" />
-        </Tab>
-    </TabBar> -->
 
-    <!-- Optional Templates 
-    // These may be provided inline as below or as separate classes.
 
-    // This header appears at the top of the Flyout.
-    <Shell.FlyoutHeaderTemplate>
-        <DataTemplate>
-            <Grid>ContentHere</Grid>
-        </DataTemplate>
-    </Shell.FlyoutHeaderTemplate>
+    <Shell.FlyoutHeader>
+        <views:FlyoutHeader />
+    </Shell.FlyoutHeader>
 
-    // ItemTemplate is for ShellItems as displayed in a Flyout
-    <Shell.ItemTemplate>
-        <DataTemplate>
-            <ContentView>
-                Bindable Properties: Title, Icon
-            </ContentView>
-        </DataTemplate>
-    </Shell.ItemTemplate>
+ 
+    <views:ClientFormPage />
+    <views:ClientsPage />
 
-    // MenuItemTemplate is for MenuItems as displayed in a Flyout
-    <Shell.MenuItemTemplate>
-        <DataTemplate>
-            <ContentView>
-                Bindable Properties: Text, Icon
-            </ContentView>
-        </DataTemplate>
-    </Shell.MenuItemTemplate>
 
-    -->
+    <!--<FlyoutItem Route="clients"
+                Title="Clients"
+                FlyoutDisplayOptions="AsMultipleItems">
+
+        <ShellContent Route="list"
+                      Title="Clients"
+                      Icon="icon.png"
+                      ContentTemplate="{DataTemplate views:ClientsPage}" />
+
+        <ShellContent Route="create"
+                      Title="Créer"
+                      Icon="icon.png"
+                      ContentTemplate="{DataTemplate views:ClientFormPage}" />
+
+    </FlyoutItem>-->
+    
+
 
 </Shell>
