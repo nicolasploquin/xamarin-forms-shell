@@ -36,12 +36,25 @@
     </Shell.FlyoutHeader>
 
 
-    <FlyoutItem Title="Home" FlyoutIcon="icon.png" Icon="icon.png">
+    <views:MainPage />
+    <views:ClientFormPage />
+    <views:ClientsPage />
+    <views:AboutPage />
+
+
+    <!--<FlyoutItem Title="Home" FlyoutIcon="icon.png" Icon="icon.png">
         <Tab>
             <views:MainPage x:Name="main" IconImageSource="icon.png" />
         </Tab>
     </FlyoutItem>
-    <FlyoutItem Title="Clients">
+    <FlyoutItem Title="Clients" Icon="icon.png" >
+        <Tab>
+            <ShellContent>
+                <views:ClientsPage x:Name="clients" />
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>-->
+    <!--<FlyoutItem Title="Clients">
         <Tab>
             <views:ClientsPage x:Name="clients" />
         </Tab>
@@ -50,7 +63,7 @@
         <Tab>
             <views:ClientFormPage x:Name="nouveau" IconImageSource="icon.png" />
         </Tab>
-    </FlyoutItem>
+    </FlyoutItem>-->
 
     <!--<views:ClientsPage />-->
 

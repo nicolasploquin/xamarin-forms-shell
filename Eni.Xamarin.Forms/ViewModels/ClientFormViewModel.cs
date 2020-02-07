@@ -1,9 +1,9 @@
-﻿using Eni.Xamarin.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Eni.Xamarin.Models;
 
 namespace Eni.Xamarin.Forms.ViewModels
 {
@@ -15,13 +15,13 @@ namespace Eni.Xamarin.Forms.ViewModels
 
         public ClientFormViewModel()
         {
-            Title = "Nouveau Client";
+            Title = "Nouveau";
             Client = new Client();
 
-            CreateClient = new Command( async () => {
-                await DataStore.CreateAsync(Client);
-                MessagingCenter.Send(this, "UpdateClients");
-            });
+            //CreateClient = new Command( async () => {
+            //    await DataStore.CreateAsync(Client);
+            //    MessagingCenter.Send(this, "UpdateClients");
+            //});
         }
 
 

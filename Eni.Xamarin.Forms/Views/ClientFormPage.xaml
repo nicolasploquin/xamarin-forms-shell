@@ -9,7 +9,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Nom" />
-            <Entry x:Name="NomEntry" Text="{Binding Client.Nom}" />
+            <Entry x:Name="NomEntry" Text="{Binding Client.Nom}" /><!-- Text="{Binding Nom}" -->
             <Label Text="Prénom" />
             <Entry x:Name="PrenomEntry" Text="{Binding Client.Prenom}" />
             <Label Text="Téléphone" />

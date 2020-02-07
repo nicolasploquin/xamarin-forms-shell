@@ -5,14 +5,14 @@ using System.Runtime.CompilerServices;
 
 using Xamarin.Forms;
 
-using Eni.Xamarin.Model;
+using Eni.Xamarin.Models;
 using Eni.Xamarin.Services;
 
 namespace Eni.Xamarin.Forms.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IBanqueAsyncService DataStore = DependencyService.Get<IBanqueAsyncService>();
+        public IBanqueAsyncService DataService = DependencyService.Get<IBanqueAsyncService>();
 
         bool isBusy = false;
         public bool IsBusy

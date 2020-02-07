@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-namespace Eni.Xamarin.Model
+namespace Eni.Xamarin.Models
 {
     public class Client
     {

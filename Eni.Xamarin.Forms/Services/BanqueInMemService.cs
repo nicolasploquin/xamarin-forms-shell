@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
-using Eni.Xamarin.Model;
+using Eni.Xamarin.Models;
 
 namespace Eni.Xamarin.Services
 {

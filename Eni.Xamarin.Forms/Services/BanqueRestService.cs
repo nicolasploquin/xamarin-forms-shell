@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 using Newtonsoft.Json;
 
-using Eni.Xamarin.Model;
+using Eni.Xamarin.Models;
 using Eni.Xamarin.Services;
 using System.Collections.ObjectModel;
 

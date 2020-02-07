@@ -1,7 +1,4 @@
-﻿using Eni.Xamarin.Forms.ViewModels;
-using Eni.Xamarin.Model;
-using Eni.Xamarin.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +6,10 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
+using Eni.Xamarin.Forms.ViewModels;
+using Eni.Xamarin.Models;
+using Eni.Xamarin.Services;
 
 namespace Eni.Xamarin.Forms.Views
 {
@@ -22,7 +23,7 @@ namespace Eni.Xamarin.Forms.Views
         {
             InitializeComponent();
 
-            BindingContext = vm;
+            BindingContext = vm; // new Client()
         }
 
         private void Enregistrer(object sender, EventArgs e)

@@ -7,16 +7,15 @@
              x:Class="Eni.Xamarin.Forms.Views.ClientsPage"
              Title="Clients">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Nouveau" Clicked="Creer"/>
-        <ToolbarItem Text="Actualiser" Clicked="Clients_Refreshing"/>
+        <ToolbarItem Text="Nouveau" />
+        <!-- Clicked="Creer" Clicked="Clients_Refreshing" -->
+        <ToolbarItem Text="Actualiser" />
     </ContentPage.ToolbarItems>
     <ListView x:Name="ClientsListView"
-        ItemsSource="{Binding .}"
+        ItemsSource="{Binding Clients}"
         CachingStrategy="RecycleElement"
         >
         <!--ItemTapped="Handle_ItemTapped"-->
-
-
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
@@ -37,29 +36,7 @@
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
-        <!--Built in Cells
-    <ListView.ItemTemplate>
-        <DataTemplate>
-            <TextCell Text="{Binding .}" d:Text="{Binding .}" />
-        </DataTemplate>
-    </ListView.ItemTemplate>-->
-    
-    <!--Custom View Cells-->
-    <!--
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-          <StackLayout>
-            <Label Text="{Binding Text}" 
-                   d:Text="{Binding .}"
-                   Style="{DynamicResource ListItemTextStyle}" />
-            <Label Text="{Binding Detail}" 
-                   d:Text="Detail"
-                   Style="{DynamicResource ListItemDetailTextStyle}"/>
-          </StackLayout>
-        </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-    -->
+       
+ 
   </ListView>
 </ContentPage>
