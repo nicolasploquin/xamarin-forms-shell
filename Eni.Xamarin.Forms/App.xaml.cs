@@ -12,7 +12,9 @@ namespace Eni.Xamarin.Forms
             InitializeComponent();
 
             // Enregistrement du service d'accès aux données (classe d'implémentation)
-            DependencyService.Register<BanqueInMemService>();
+
+            //DependencyService.Register<BanqueInMemService>();
+            DependencyService.Register<BanqueRestService>();
             //DependencyService.Register<BanqueRestService>();
 
             MainPage = new AppShell();

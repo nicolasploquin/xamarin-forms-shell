@@ -63,16 +63,16 @@ namespace Eni.Xamarin.Services
             return null;
         }
 
-        public async Task<ObservableCollection<Client>> ReadAllAsync()
+        public async Task<List<Client>> ReadAllAsync()
         {
             string uri = string.Format(@"{0}/clients", API);
             var response = await http.GetAsync(uri);
             if (response.IsSuccessStatusCode)
             {
                 var json = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<ObservableCollection<Client>>(json);
+                return JsonConvert.DeserializeObject<List<Client>>(json);
             }
-            return new ObservableCollection<Client>();
+            return new List<Client>();
         }
 
 

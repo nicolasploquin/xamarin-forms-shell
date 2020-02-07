@@ -10,7 +10,7 @@ namespace Eni.Xamarin.Services
     public interface IBanqueAsyncService
     {
         Task CreateAsync(Client client);
-        Task<ObservableCollection<Client>> ReadAllAsync();
+        Task<List<Client>> ReadAllAsync();
         Task<Client> ReadAsync(long id);
 
     }

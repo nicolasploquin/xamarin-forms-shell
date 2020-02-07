@@ -8,25 +8,22 @@ using Xamarin.Essentials;
 
 namespace Eni.Xamarin.Forms.ViewModels
 {
-    class ClientFormViewModel : BaseViewModel
+    class CustomerViewModel : BaseViewModel
     {
 
         public Client Client { get; set; }
-        public Command CreateClient { get; set; }
+        public Command ActionCall { get; set; }
 
-        public ClientFormViewModel(ContentPage page)
+        public CustomerViewModel(ContentPage page, Client client)
         {
             Page = page;
 
             Title = "Nouveau";
-            Client = new Client();
+            Client = client;
 
-            CreateClient = new Command(async () =>
+            ActionCall = new Command(() =>
             {
-                _ = Page.Navigation.PopModalAsync();
-                await DataService.CreateAsync(Client);
-                Vibration.Vibrate(TimeSpan.FromMilliseconds(20));
-                MessagingCenter.Send(this, "UpdateClients");
+                PhoneDialer.Open(Client.Tel);
             });
         }
 

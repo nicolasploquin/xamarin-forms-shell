@@ -5,20 +5,22 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Eni.Xamarin.Forms.Views.ClientsPage"
-             Title="Clients">
+             Title="{Binding Title}">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Nouveau" />
         <!-- Clicked="Creer" Clicked="Clients_Refreshing" -->
-        <ToolbarItem Text="Actualiser" />
+        <ToolbarItem Text="Nouveau" Clicked="NavNouveau" />
+        <ToolbarItem Text="Actualiser" Command="{Binding ActualiserListe}" />
     </ContentPage.ToolbarItems>
     <ListView x:Name="ClientsListView"
         ItemsSource="{Binding Clients}"
         CachingStrategy="RecycleElement"
-        >
+        ItemSelected="ClientsListView_ItemSelected"
+        SelectedItem="{Binding ActiveClient, Mode=TwoWay}" >
         <!--ItemTapped="Handle_ItemTapped"-->
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
+                    
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />

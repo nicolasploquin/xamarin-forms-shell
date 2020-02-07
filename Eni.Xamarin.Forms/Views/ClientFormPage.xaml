@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Eni.Xamarin.Forms.Views.ClientFormPage"
-             Title="Nouveau">
+             Title="{Binding Title}">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Nom" />
@@ -15,7 +15,7 @@
             <Label Text="Téléphone" />
             <Entry x:Name="TelEntry" Text="{Binding Client.Tel}" Keyboard="Telephone"
                         VerticalOptions="StartAndExpand" />
-            <Button Text="Enregistrer" Clicked="Enregistrer"  Command="{Binding CreateClient}" />
+            <Button Text="Enregistrer" Command="{Binding CreateClient}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

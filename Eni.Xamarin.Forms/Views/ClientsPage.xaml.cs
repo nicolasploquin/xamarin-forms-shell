@@ -23,8 +23,14 @@ namespace Eni.Xamarin.Forms.Views
             BindingContext = new ClientsViewModel();
         }
 
-        
+        private void NavNouveau(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new ClientFormPage());
+        }
 
-        
+        private void ClientsListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Navigation.PushModalAsync(new CustomerPage(((ClientsViewModel)BindingContext).ActiveClient));
+        }
     }
 }

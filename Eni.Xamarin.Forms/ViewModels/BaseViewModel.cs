@@ -14,6 +14,8 @@ namespace Eni.Xamarin.Forms.ViewModels
     {
         public IBanqueAsyncService DataService = DependencyService.Get<IBanqueAsyncService>();
 
+        public ContentPage Page { get; set; }
+
         bool isBusy = false;
         public bool IsBusy
         {

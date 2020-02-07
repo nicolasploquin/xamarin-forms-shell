@@ -11,6 +11,15 @@ namespace Eni.Xamarin.Forms.ViewModels
     {
         public ObservableCollection<Client> Clients { get; set; }
 
+        private Client activeClient;
+        public Client ActiveClient {
+            get { return activeClient; }
+            set { SetProperty(ref activeClient, value); }
+        }
+
+
+        public Command ActualiserListe { get; set; }
+
         public ClientsViewModel()
         {
             Title = "Clients";
@@ -18,21 +27,37 @@ namespace Eni.Xamarin.Forms.ViewModels
             Clients = new ObservableCollection<Client>();
             //Clients = DataService.ReadAllAsync().Result;
 
-            DataService.ReadAllAsync().ContinueWith(
-                clients => {
-                    Clients.Clear();
-                    foreach (Client cli in clients.Result)
+            //DataService.ReadAllAsync().ContinueWith(
+            //    clients => {
+            //        Clients.Clear();
+            //        foreach (Client cli in clients.Result)
+            //        {
+            //            Clients.Add(cli);
+            //        }
+            //    }
+            //);
+
+            ActualiserListe = new Command( () => {
+                DataService.ReadAllAsync().ContinueWith(
+                    clients =>
                     {
-                        Clients.Add(cli);
+                        Clients.Clear();
+                        foreach (Client cli in clients.Result)
+                        {
+                            Clients.Add(cli);
+                        }
                     }
-                }
-            );
+                );
+            });
+
+            ActualiserListe.Execute(null);
 
 
-            //MessagingCenter.Subscribe<ClientFormViewModel>(this, "UpdateClients", (obj) =>
-            //{
-            //    Clients = DataService.ReadAllAsync().Result;
-            //});
+            MessagingCenter.Subscribe<ClientFormViewModel>(this, "UpdateClients", (sender) =>
+            {
+                ActualiserListe.Execute(null);
+                //Clients = DataService.ReadAllAsync().Result;
+            });
         }
 
 

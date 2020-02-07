@@ -17,19 +17,22 @@ namespace Eni.Xamarin.Forms.Views
     public partial class ClientFormPage : ContentPage
     {
         IBanqueAsyncService ds = DependencyService.Get<IBanqueAsyncService>();
-
-        ClientFormViewModel vm = new ClientFormViewModel();
         public ClientFormPage()
         {
             InitializeComponent();
-
-            BindingContext = vm; // new Client()
+            BindingContext = new ClientFormViewModel(this);
         }
-
-        private void Enregistrer(object sender, EventArgs e)
+        public ClientFormPage(Client client) : this()
         {
-            //vm.CreateClientCommand.E(Client);
-            Navigation.PopModalAsync();
+            ClientFormViewModel vm = (ClientFormViewModel) BindingContext;
+            vm.Client = client;
+            vm.Title = "Modifier";
         }
+
+        //private void Enregistrer(object sender, EventArgs e)
+        //{
+        //    //vm.CreateClientCommand.E(Client);
+        //    Navigation.PopModalAsync();
+        //}
     }
 }

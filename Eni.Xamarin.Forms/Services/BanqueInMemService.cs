@@ -9,10 +9,10 @@ namespace Eni.Xamarin.Services
     {
         private static long _id = 0L;
 
-        private ObservableCollection<Client> clients;
+        private List<Client> clients;
 
         public BanqueInMemService() {
-            clients = new ObservableCollection<Client>()
+            clients = new List<Client>()
             {
                 new Client(){ Id=_id++, Nom="Durand", Prenom="Marie", Tel="0612345789" },
                 new Client(){ Id=_id++, Nom="Leblanc", Prenom="Marc", Tel="0623457891" },
@@ -50,11 +50,11 @@ namespace Eni.Xamarin.Services
             return new List<Client>(clients).Find(cli => cli.Id == id);
         }
 
-        private ObservableCollection<Client> ReadAll()
+        private List<Client> ReadAll()
         {
             return clients;
         }
-        public Task<ObservableCollection<Client>> ReadAllAsync()
+        public Task<List<Client>> ReadAllAsync()
         {
             return Task.FromResult(ReadAll());
         }
